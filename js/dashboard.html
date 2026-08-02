@@ -251,3 +251,212 @@ No Orders Found
 </div>
 
 </section>
+<!-- Footer -->
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div>
+
+<h2>🌿 Natural Collection</h2>
+
+<p>
+
+বাংলাদেশের বিশ্বস্ত প্রাকৃতিক ও হারবাল পণ্যের অনলাইন স্টোর।
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>📍 Dhaka, Bangladesh</p>
+
+<p>📞 +8801XXXXXXXXX</p>
+
+<p>✉️ support@naturalcollection.com</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Natural Collection. All Rights Reserved.
+
+</div>
+
+</footer>
+
+<!-- WhatsApp -->
+
+<a
+href="https://wa.me/8801XXXXXXXXX"
+class="whatsapp"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- Back To Top -->
+
+<button
+id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- Dashboard Script -->
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import {
+
+onAuthStateChanged
+
+}
+
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+onAuthStateChanged(auth,(user)=>{
+
+if(user){
+
+document.getElementById("userName").innerHTML=
+
+user.displayName || "Natural Collection User";
+
+document.getElementById("userEmail").innerHTML=
+
+user.email;
+
+if(user.photoURL){
+
+document.getElementById("userPhoto").src=
+
+user.photoURL;
+
+}
+
+}else{
+
+window.location.href="login.html";
+
+}
+
+});
+
+// Load Orders
+
+const orders=
+
+JSON.parse(localStorage.getItem("orders")) || [];
+
+document.getElementById("totalOrders").innerHTML=
+
+orders.length;
+
+let pending=0;
+
+let completed=0;
+
+const recentOrders=document.getElementById("recentOrders");
+
+recentOrders.innerHTML="";
+
+if(orders.length===0){
+
+recentOrders.innerHTML=`
+
+<tr>
+
+<td colspan="5"
+
+style="text-align:center;">
+
+No Orders Found
+
+</td>
+
+</tr>
+
+`;
+
+}else{
+
+orders.slice().reverse().forEach(order=>{
+
+if(order.status==="Pending"){
+
+pending++;
+
+}
+
+if(order.status==="Completed"){
+
+completed++;
+
+}
+
+recentOrders.innerHTML+=`
+
+<tr>
+
+<td>${order.orderId}</td>
+
+<td>${new Date(order.createdAt).toLocaleDateString()}</td>
+
+<td>${order.paymentMethod}</td>
+
+<td>৳${order.total}</td>
+
+<td>${order.status}</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+document.getElementById("pendingOrders").innerHTML=
+
+pending;
+
+document.getElementById("completedOrders").innerHTML=
+
+completed;
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
