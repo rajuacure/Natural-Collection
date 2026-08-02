@@ -1,0 +1,95 @@
+/* ==========================================
+   Natural Collection V2
+   Dashboard CSS
+   Part 12.1
+========================================== */
+
+.dashboard-section{
+
+padding:60px 0;
+
+background:#f8f9fa;
+
+min-height:100vh;
+
+}
+
+.dashboard-card{
+
+background:#fff;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.profile-box{
+
+text-align:center;
+
+padding:30px;
+
+}
+
+.profile-box img{
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+border:5px solid #198754;
+
+object-fit:cover;
+
+margin-bottom:20px;
+
+}
+
+.profile-box h3{
+
+font-size:28px;
+
+color:#198754;
+
+margin-bottom:10px;
+
+}
+
+.profile-box p{
+
+color:#666;
+
+font-size:17px;
+
+}
+
+.dashboard-menu{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin:40px 0;
+
+}
+
+.dashboard-menu .btn{
+
+padding:14px 28px;
+
+border-radius:12px;
+
+font-size:16px;
+
+font-weight:600;
+
+}
