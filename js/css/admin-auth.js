@@ -106,3 +106,108 @@ alert(error.message);
 });
 
 }
+// ==========================================
+// Admin Authentication
+// Part 14.2
+// ==========================================
+
+// ==========================================
+// Protect Admin Pages
+// ==========================================
+
+onAuthStateChanged(auth, (user) => {
+
+    // Login Page Skip
+
+    if (window.location.pathname.includes("admin-login.html")) {
+
+        if (user && user.email === ADMIN_EMAIL) {
+
+            window.location.href = "admin-dashboard.html";
+
+        }
+
+        return;
+
+    }
+
+    // Protect All Admin Pages
+
+    if (!user) {
+
+        window.location.href = "admin-login.html";
+
+        return;
+
+    }
+
+    if (user.email !== ADMIN_EMAIL) {
+
+        alert("❌ Unauthorized Access");
+
+        signOut(auth);
+
+        window.location.href = "admin-login.html";
+
+        return;
+
+    }
+
+    console.log("✅ Admin Logged In :", user.email);
+
+});
+
+// ==========================================
+// Admin Logout
+// ==========================================
+
+window.adminLogout = async function () {
+
+    const confirmLogout = confirm("Are you sure you want to logout?");
+
+    if (!confirmLogout) return;
+
+    try {
+
+        await signOut(auth);
+
+        alert("✅ Logout Successful");
+
+        window.location.href = "admin-login.html";
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+    }
+
+};
+
+// ==========================================
+// Admin Session Check
+// ==========================================
+
+window.isAdminLoggedIn = function () {
+
+    return auth.currentUser &&
+           auth.currentUser.email === ADMIN_EMAIL;
+
+};
+
+// ==========================================
+// Get Current Admin
+// ==========================================
+
+window.getCurrentAdmin = function () {
+
+    return auth.currentUser;
+
+};
+
+// ==========================================
+// End admin-auth.js
+// ==========================================
