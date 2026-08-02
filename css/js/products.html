@@ -127,8 +127,20 @@ placeholder="🔍 Search Product">
 <div style="display:flex;gap:10px;justify-content:center;">
 
 <button
-class="btn cart-btn"
-data-name="গাওয়া ঘি">
+class="btn"
+onclick="addToCart(
+
+'গাওয়া ঘি',
+
+1250,
+
+'images/ghee.png'
+
+)">
+
+🛒 Add To Cart
+
+</button>data-name="গাওয়া ঘি">
 
 🛒 Cart
 
@@ -155,8 +167,21 @@ class="btn wishlist-btn">
 
 <p>৳ 850</p>
 
-<button class="btn">
+<button
+class="btn"
+onclick="addToCart(
 
+'সুন্দরবন মধু',
+
+850,
+
+'images/honey.png'
+
+)">
+
+🛒 Add To Cart
+
+</button>
 🛒 Add to Cart
 
 </button>
@@ -199,8 +224,8 @@ class="btn wishlist-btn">
 
 </section>
 
+<script src="js/cart.js"></script>
 <script src="js/products.js"></script>
-
 </body>
 
 </html>
