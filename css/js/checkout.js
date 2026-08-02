@@ -127,3 +127,121 @@ ${formatPrice(subtotal)}
 // ==========================================
 
 loadCheckout();
+// ==========================================
+// Checkout Form Submit
+// Part 2
+// ==========================================
+
+if (checkoutForm) {
+
+    checkoutForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        // Customer Information
+
+        const customerName = document.getElementById("customerName").value.trim();
+
+        const customerPhone = document.getElementById("customerPhone").value.trim();
+
+        const customerEmail = document.getElementById("customerEmail").value.trim();
+
+        const customerAddress = document.getElementById("customerAddress").value.trim();
+
+        // Payment Method
+
+        const paymentMethod = document.querySelector(
+            'input[name="payment"]:checked'
+        ).value;
+
+        // Validation
+
+        if (customerName.length < 3) {
+
+            alert("সঠিক নাম লিখুন");
+
+            return;
+
+        }
+
+        if (!isValidPhone(customerPhone)) {
+
+            alert("সঠিক বাংলাদেশি মোবাইল নম্বর লিখুন");
+
+            return;
+
+        }
+
+        if (customerAddress.length < 10) {
+
+            alert("সম্পূর্ণ ঠিকানা লিখুন");
+
+            return;
+
+        }
+
+        if (cart.length === 0) {
+
+            alert("আপনার Cart খালি।");
+
+            return;
+
+        }
+
+        // Order Object
+
+        const order = {
+
+            orderId: "NC" + Date.now(),
+
+            customer: {
+
+                name: customerName,
+
+                phone: customerPhone,
+
+                email: customerEmail,
+
+                address: customerAddress
+
+            },
+
+            paymentMethod: paymentMethod,
+
+            products: cart,
+
+            total: getGrandTotal(),
+
+            status: "Pending",
+
+            createdAt: new Date().toISOString()
+
+        };
+
+        // Previous Orders
+
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+        // Add New Order
+
+        orders.push(order);
+
+        // Save Orders
+
+        localStorage.setItem(
+
+            "orders",
+
+            JSON.stringify(orders)
+
+        );
+
+        // Last Order
+
+        localStorage.setItem(
+
+            "lastOrder",
+
+            JSON.stringify(order)
+
+        );
