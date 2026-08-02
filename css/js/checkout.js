@@ -93,3 +93,108 @@ ${item.qty}
 // ==========================================
 
 loadCheckout();
+// ==========================================
+// Place Order
+// ==========================================
+
+if (checkoutForm) {
+
+    checkoutForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const customerName = document.getElementById("customerName").value.trim();
+
+        const customerPhone = document.getElementById("customerPhone").value.trim();
+
+        const customerEmail = document.getElementById("customerEmail").value.trim();
+
+        const customerAddress = document.getElementById("customerAddress").value.trim();
+
+        const paymentMethod = document.querySelector(
+            'input[name="payment"]:checked'
+        ).value;
+
+        if (
+            customerName === "" ||
+            customerPhone === "" ||
+            customerAddress === ""
+        ) {
+
+            alert("সব তথ্য পূরণ করুন");
+
+            return;
+
+        }
+
+        // Total
+
+        let grandTotal = 0;
+
+        cart.forEach(item => {
+
+            grandTotal += item.price * item.qty;
+
+        });
+
+        // Order Object
+
+        const order = {
+
+            orderId: "ORD-" + Date.now(),
+
+            customerName,
+
+            customerPhone,
+
+            customerEmail,
+
+            customerAddress,
+
+            paymentMethod,
+
+            items: cart,
+
+            total: grandTotal,
+
+            status: "Pending",
+
+            orderDate: new Date().toLocaleString()
+
+        };
+
+        // Save Order
+
+        localStorage.setItem(
+
+            "lastOrder",
+
+            JSON.stringify(order)
+
+        );
+
+        localStorage.setItem(
+
+            "orders",
+
+            JSON.stringify([
+
+                ...(JSON.parse(localStorage.getItem("orders")) || []),
+
+                order
+
+            ])
+
+        );
+
+        // Clear Cart
+
+        localStorage.removeItem("cart");
+
+        alert("✅ Order Placed Successfully");
+
+        window.location.href = "order-success.html";
+
+    });
+
+}
