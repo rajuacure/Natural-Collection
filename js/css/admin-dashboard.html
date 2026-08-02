@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Natural Collection</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="css/admin.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-wrapper">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+🌿 Natural Collection
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="admin-dashboard.html">
+
+<i class="fa-solid fa-gauge"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin-products.html">
+
+<i class="fa-solid fa-box"></i>
+
+Products
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin-orders.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Orders
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin-users.html">
+
+<i class="fa-solid fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin-settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+
+onclick="adminLogout()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="admin-main">
+
+<header class="admin-header">
+
+<div>
+
+<h2>
+
+Dashboard
+
+</h2>
+
+<p>
+
+Welcome Back Admin 👋
+
+</p>
+
+</div>
+
+<div class="admin-profile">
+
+<img
+
+src="images/admin.png"
+
+alt="Admin"
+
+width="50">
+
+<span id="adminName">
+
+Admin
+
+</span>
+
+</div>
+
+</header>
+
+<!-- Statistics -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-box"></i>
+
+<h2 id="totalProducts">
+
+0
+
+</h2>
+
+<p>Total Products</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<h2 id="totalOrders">
+
+0
+
+</h2>
+
+<p>Total Orders</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2 id="totalUsers">
+
+0
+
+</h2>
+
+<p>Total Users</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+<h2 id="totalSales">
+
+৳0
+
+</h2>
+
+<p>Total Sales</p>
+
+</div>
+
+</section>
