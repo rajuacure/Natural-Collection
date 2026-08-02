@@ -245,3 +245,93 @@ if (checkoutForm) {
             JSON.stringify(order)
 
         );
+// ==========================================
+// Checkout.js
+// Part 3 (Complete)
+// ==========================================
+
+        // Payment Message
+
+        switch (paymentMethod) {
+
+            case "Cash on Delivery":
+
+                alert("আপনি Cash On Delivery নির্বাচন করেছেন।");
+
+                break;
+
+            case "bKash":
+
+                alert("আপনি bKash নির্বাচন করেছেন। অর্ডার নিশ্চিত করার পর পেমেন্ট সম্পন্ন করুন।");
+
+                break;
+
+            case "Nagad":
+
+                alert("আপনি Nagad নির্বাচন করেছেন। অর্ডার নিশ্চিত করার পর পেমেন্ট সম্পন্ন করুন।");
+
+                break;
+
+            default:
+
+                alert("Payment Method নির্বাচন করুন");
+
+                return;
+
+        }
+
+        // Order Success
+
+        alert("🎉 আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে!");
+
+        // Clear Cart
+
+        localStorage.removeItem("cart");
+
+        cart = [];
+
+        // Redirect
+
+        window.location.href = "order-success.html";
+
+    });
+
+}
+
+// ==========================================
+// Helper Function
+// ==========================================
+
+function getLastOrder() {
+
+    return JSON.parse(localStorage.getItem("lastOrder"));
+
+}
+
+// ==========================================
+// Helper Function
+// ==========================================
+
+function getAllOrders() {
+
+    return JSON.parse(localStorage.getItem("orders")) || [];
+
+}
+
+// ==========================================
+// Helper Function
+// ==========================================
+
+function clearOrders() {
+
+    localStorage.removeItem("orders");
+
+    localStorage.removeItem("lastOrder");
+
+}
+
+// ==========================================
+// Debug
+// ==========================================
+
+console.log("Checkout JS Loaded Successfully");
