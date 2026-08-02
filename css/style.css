@@ -453,3 +453,167 @@ grid-template-columns:1fr;
 }
 
 }
+/* ==========================
+Footer
+========================== */
+
+.footer{
+
+background:#14532d;
+
+color:#fff;
+
+padding:60px 0 20px;
+
+margin-top:80px;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr;
+
+gap:40px;
+
+}
+
+.footer h2,
+.footer h3{
+
+margin-bottom:20px;
+
+}
+
+.footer p{
+
+line-height:1.8;
+
+}
+
+.footer ul{
+
+list-style:none;
+
+}
+
+.footer ul li{
+
+margin:10px 0;
+
+}
+
+.footer a{
+
+color:#fff;
+
+text-decoration:none;
+
+}
+
+.footer a:hover{
+
+color:#ffd54f;
+
+}
+
+.copyright{
+
+text-align:center;
+
+margin-top:40px;
+
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.2);
+
+}
+
+/* ==========================
+WhatsApp
+========================== */
+
+.whatsapp{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#25D366;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+z-index:999;
+
+}
+
+/* ==========================
+Top Button
+========================== */
+
+#topBtn{
+
+position:fixed;
+
+left:20px;
+
+bottom:20px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#198754;
+
+color:#fff;
+
+font-size:20px;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:768px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+}
