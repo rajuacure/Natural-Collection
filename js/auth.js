@@ -178,3 +178,177 @@ if (registerForm) {
     });
 
 }
+// ==========================================
+// User Login
+// Part 10.3
+// ==========================================
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const email = document.getElementById("loginEmail").value.trim();
+
+        const password = document.getElementById("loginPassword").value;
+
+        const remember = document.getElementById("rememberMe");
+
+        try {
+
+            // Remember Me
+
+            await setPersistence(
+
+                auth,
+
+                remember && remember.checked
+
+                    ? browserLocalPersistence
+
+                    : browserSessionPersistence
+
+            );
+
+            // Login
+
+            const userCredential = await signInWithEmailAndPassword(
+
+                auth,
+
+                email,
+
+                password
+
+            );
+
+            const user = userCredential.user;
+
+            // Email Verification
+
+            if (!user.emailVerified) {
+
+                alert("❌ আপনার Email এখনও Verify করা হয়নি।");
+
+                await signOut(auth);
+
+                return;
+
+            }
+
+            alert("✅ Login Successful");
+
+            window.location.href = "index.html";
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            alert(error.message);
+
+        }
+
+    });
+
+}
+
+// ==========================================
+// Google Login
+// ==========================================
+
+window.googleLogin = async function () {
+
+    try {
+
+        const result = await signInWithPopup(auth, provider);
+
+        alert("✅ Google Login Successful");
+
+        window.location.href = "index.html";
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+    }
+
+};
+
+// ==========================================
+// Forgot Password
+// ==========================================
+
+window.resetPassword = async function () {
+
+    const email = prompt("আপনার Email লিখুন");
+
+    if (!email) return;
+
+    try {
+
+        await sendPasswordResetEmail(auth, email);
+
+        alert("✅ Password Reset Email পাঠানো হয়েছে।");
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+    }
+
+};
+
+// ==========================================
+// Logout
+// ==========================================
+
+window.logout = async function () {
+
+    try {
+
+        await signOut(auth);
+
+        alert("✅ Logout Successful");
+
+        window.location.href = "login.html";
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+    }
+
+};
+
+// ==========================================
+// Auto Login Check
+// ==========================================
+
+onAuthStateChanged(auth, (user) => {
+
+    if (user) {
+
+        console.log("Logged In :", user.email);
+
+    } else {
+
+        console.log("No User Logged In");
+
+    }
+
+});
