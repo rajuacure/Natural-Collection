@@ -244,3 +244,212 @@ display:none;
 }
 
 }
+/* ==========================
+Section Title
+========================== */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+margin-bottom:40px;
+
+color:#14532d;
+
+}
+
+/* ==========================
+Categories
+========================== */
+
+.categories{
+
+padding:80px 0;
+
+}
+
+.category-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+.category-card{
+
+background:#fff;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.category-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.category-card img{
+
+width:100px;
+
+height:100px;
+
+object-fit:contain;
+
+margin-bottom:20px;
+
+}
+
+/* ==========================
+Products
+========================== */
+
+.featured{
+
+padding:80px 0;
+
+}
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+.product-card{
+
+background:#fff;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.product-card img{
+
+width:180px;
+
+height:180px;
+
+object-fit:contain;
+
+}
+
+.product-card h3{
+
+margin:20px 0 10px;
+
+}
+
+.product-card p{
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#198754;
+
+margin-bottom:20px;
+
+}
+
+/* ==========================
+Offer
+========================== */
+
+.offer{
+
+background:#198754;
+
+color:#fff;
+
+padding:70px 20px;
+
+text-align:center;
+
+}
+
+.offer h2{
+
+font-size:40px;
+
+margin-bottom:20px;
+
+}
+
+.offer p{
+
+font-size:18px;
+
+margin-bottom:30px;
+
+}
+
+.offer .btn{
+
+background:#fff;
+
+color:#198754;
+
+}
+
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:991px){
+
+.category-grid,
+
+.product-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.category-grid,
+
+.product-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
