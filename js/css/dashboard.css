@@ -217,3 +217,234 @@ width:100%;
 }
 
 }
+/* ==========================================
+   Natural Collection V2
+   Dashboard CSS
+   Part 12.3
+========================================== */
+
+/* Recent Orders */
+
+.recent-orders{
+
+margin-top:40px;
+
+overflow-x:auto;
+
+}
+
+.recent-orders h2{
+
+margin-bottom:20px;
+
+font-size:28px;
+
+color:#198754;
+
+font-weight:700;
+
+}
+
+.recent-orders table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:#fff;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.recent-orders thead{
+
+background:#198754;
+
+color:#fff;
+
+}
+
+.recent-orders th{
+
+padding:18px;
+
+font-size:16px;
+
+font-weight:600;
+
+text-align:center;
+
+}
+
+.recent-orders td{
+
+padding:16px;
+
+text-align:center;
+
+border-bottom:1px solid #eee;
+
+font-size:15px;
+
+}
+
+.recent-orders tbody tr{
+
+transition:.3s;
+
+}
+
+.recent-orders tbody tr:hover{
+
+background:#f1fff6;
+
+}
+
+/* Status */
+
+.status-pending{
+
+background:#fff3cd;
+
+color:#856404;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-size:13px;
+
+font-weight:600;
+
+display:inline-block;
+
+}
+
+.status-completed{
+
+background:#d4edda;
+
+color:#155724;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-size:13px;
+
+font-weight:600;
+
+display:inline-block;
+
+}
+
+.status-cancel{
+
+background:#f8d7da;
+
+color:#721c24;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-size:13px;
+
+font-weight:600;
+
+display:inline-block;
+
+}
+
+/* Scrollbar */
+
+.recent-orders::-webkit-scrollbar{
+
+height:8px;
+
+}
+
+.recent-orders::-webkit-scrollbar-thumb{
+
+background:#198754;
+
+border-radius:20px;
+
+}
+
+/* Animation */
+
+.dashboard-card{
+
+animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.dashboard-card{
+
+padding:20px;
+
+}
+
+.profile-box img{
+
+width:90px;
+
+height:90px;
+
+}
+
+.profile-box h3{
+
+font-size:22px;
+
+}
+
+.recent-orders table{
+
+font-size:13px;
+
+}
+
+.recent-orders th,
+
+.recent-orders td{
+
+padding:10px;
+
+}
+
+}
+
+/* ==========================================
+   End Dashboard CSS
+========================================== */
