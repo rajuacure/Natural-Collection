@@ -389,3 +389,110 @@ Loading Products...
 </div>
 
 </section>
+<!-- ==========================================
+Footer
+========================================== -->
+
+<footer class="admin-footer">
+
+<p>
+
+© 2026 Natural Collection Admin Panel
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+<!-- ==========================================
+Chart.js
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- ==========================================
+Dashboard Chart
+========================================== -->
+
+<script>
+
+const ctx=document.getElementById("salesChart");
+
+if(ctx){
+
+new Chart(ctx,{
+
+type:"line",
+
+data:{
+
+labels:["Jan","Feb","Mar","Apr","May","Jun"],
+
+datasets:[{
+
+label:"Sales",
+
+data:[12000,18000,15000,22000,30000,28000],
+
+borderColor:"#198754",
+
+backgroundColor:"rgba(25,135,84,.15)",
+
+fill:true,
+
+tension:.4
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+display:true
+
+}
+
+},
+
+scales:{
+
+y:{
+
+beginAtZero:true
+
+}
+
+}
+
+}
+
+});
+
+}
+
+</script>
+
+<!-- ==========================================
+Scripts
+========================================== -->
+
+<script type="module"
+src="js/admin-auth.js"></script>
+
+<script type="module"
+src="js/admin-dashboard.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
