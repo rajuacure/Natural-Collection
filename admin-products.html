@@ -545,3 +545,142 @@ id="searchProduct"
 placeholder="Search Product...">
 
 </div>
+<!-- ==========================================
+Product Table
+========================================== -->
+
+<section class="dashboard-card">
+
+<div class="table-header">
+
+<h3>
+
+📦 Product List
+
+</h3>
+
+<button
+
+class="btn"
+
+onclick="loadProducts()">
+
+<i class="fa-solid fa-rotate"></i>
+
+Refresh
+
+</button>
+
+</div>
+
+<div class="table-responsive">
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>Image</th>
+
+<th>Product Name</th>
+
+<th>Category</th>
+
+<th>Price</th>
+
+<th>Stock</th>
+
+<th>Featured</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="productsTable">
+
+<tr>
+
+<td colspan="7"
+
+style="text-align:center;">
+
+Loading Products...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+Quick Statistics
+========================================== -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-box"></i>
+
+<h2 id="productCount">
+
+0
+
+</h2>
+
+<p>Total Products</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-star"></i>
+
+<h2 id="featuredCount">
+
+0
+
+</h2>
+
+<p>Featured Products</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h2 id="lowStockCount">
+
+0
+
+</h2>
+
+<p>Low Stock</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-tags"></i>
+
+<h2 id="categoryCount">
+
+0
+
+</h2>
+
+<p>Categories</p>
+
+</div>
+
+</section>
