@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orders Management | Natural Collection</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-wrapper">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+🌿 Natural Collection
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="admin-dashboard.html">
+
+<i class="fa-solid fa-gauge"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin-products.html">
+
+<i class="fa-solid fa-box"></i>
+
+Products
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="admin-orders.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Orders
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin-users.html">
+
+<i class="fa-solid fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin-settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="adminLogout()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main -->
+
+<main class="admin-main">
+
+<header class="admin-header">
+
+<div>
+
+<h2>
+
+📦 Orders Management
+
+</h2>
+
+<p>
+
+Manage Customer Orders
+
+</p>
+
+</div>
+
+</header>
+
+<!-- Search -->
+
+<div class="search-box">
+
+<input
+
+type="text"
+
+id="searchOrder"
+
+placeholder="Search by Order ID, Customer Name or Phone...">
+
+</div>
+
+<!-- Orders Table -->
+
+<section class="dashboard-card">
+
+<div class="table-responsive">
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+
+<th>Customer</th>
+
+<th>Phone</th>
+
+<th>Total</th>
+
+<th>Payment</th>
+
+<th>Status</th>
+
+<th>Date</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+<tr>
+
+<td colspan="8" style="text-align:center;">
+
+Loading Orders...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
