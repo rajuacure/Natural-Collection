@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Website Settings | Admin</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+<!-- Sidebar -->
+
+<aside class="admin-sidebar">
+
+<h2 style="text-align:center;color:#198754;">
+🌿 Picker Shop
+</h2>
+
+<hr>
+
+
+<a href="admin-dashboard.html">
+📊 Dashboard
+</a>
+
+
+<a href="admin-products.html">
+📦 Products
+</a>
+
+
+<a href="admin-orders.html">
+🛒 Orders
+</a>
+
+
+<a href="admin-users.html">
+👥 Users
+</a>
+
+
+<a href="admin-settings.html">
+⚙️ Settings
+</a>
+
+
+<hr>
+
+
+<button
+class="btn"
+onclick="adminLogout()">
+
+🚪 Logout
+
+</button>
+
+
+</aside>
+
+
+
+
+<!-- Main -->
+
+
+<main class="admin-main">
+
+
+<h1>
+
+⚙️ Website Settings
+
+</h1>
+
+
+<br>
+
+
+<div class="card">
+
+
+<h2>
+Website Information
+</h2>
+
+
+<br>
+
+
+<input
+id="websiteName"
+placeholder="Website Name">
+
+
+<br><br>
+
+
+<input
+id="websitePhone"
+placeholder="Phone Number">
+
+
+<br><br>
+
+
+<input
+id="websiteEmail"
+placeholder="Email">
+
+
+<br><br>
+
+
+<textarea
+id="websiteAddress"
+placeholder="Address">
+</textarea>
+
+
+<br><br>
+
+
+<input
+id="facebook"
+placeholder="Facebook Link">
+
+
+<br><br>
+
+
+<input
+id="youtube"
+placeholder="YouTube Link">
+
+
+<br><br>
+
+
+<input
+id="whatsapp"
+placeholder="WhatsApp Link">
+
+
+<br><br>
+
+
+<textarea
+id="footerText"
+placeholder="Footer Text">
+</textarea>
+
+
+<br><br>
+
+
+<button
+class="btn"
+onclick="saveSettings()">
+<h3>Website Logo</h3>
+
+<input 
+type="file"
+id="logoFile">
+
+<br><br>
+
+<img
+id="logoPreview"
+width="120">
+
+<br>
+
+<button
+class="btn"
+onclick="uploadLogo()">
+
+Upload Logo
+
+</button>
+  <h3>Website Banner</h3>
+
+<input 
+type="file"
+id="bannerFile">
+
+
+<br><br>
+
+
+<img
+id="bannerPreview"
+width="300">
+
+
+<br>
+
+
+<button
+class="btn"
+onclick="uploadBanner()">
+
+Upload Banner
+
+</button>
+💾 Save Settings
+
+</button>
+
+
+</div>
+
+
+</main>
+
+
+</div>
+
+
+
+<script type="module" src="./admin.js"></script>
+
+
+</body>
+
+</html>
